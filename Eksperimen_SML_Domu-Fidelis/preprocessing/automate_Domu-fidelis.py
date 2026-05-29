@@ -38,17 +38,17 @@ def preprocess_data(path):
     # Scale
     scaler = StandardScaler()
 
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
     print("Data scaled")
 
     df_train_preprocessed = pd.DataFrame(
-    X_train_scaled,
+    X_train,
     columns=X.columns
     )
 
     df_test_preprocessed = pd.DataFrame(
-        X_test_scaled,
+        X_test,
         columns=X.columns
     )
 
@@ -70,3 +70,5 @@ def preprocess_data(path):
 
     # Dump scaler
     dump(scaler, "scaler.pkl")
+
+    return X_train, X_test, y_train, y_test
