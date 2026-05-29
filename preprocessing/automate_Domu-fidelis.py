@@ -57,12 +57,12 @@ def preprocess_data(path):
     df_test_preprocessed["Outcome"] = y_test.reset_index(drop=True)
 
     df_train_preprocessed.to_csv(
-        "df_train_preprocessing.csv",
+        "diabetes_train_preprocessing.csv",
         index=False
     )
 
     df_test_preprocessed.to_csv(
-        "df_test_preprocessing.csv",
+        "diabetes_test_preprocessing.csv",
         index=False
     )
 
